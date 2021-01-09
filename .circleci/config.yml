@@ -17,6 +17,6 @@ jobs:
           name: ダミー アーティファクトの作成
           command: |
             mkdir uploadDir;
-            echo "my artifact files in a dir" > uploadDir;
+            echo "my artifact files in a dir" > uploadDir/sample.txt;
       - store_artifacts:
           path: uploadDir
