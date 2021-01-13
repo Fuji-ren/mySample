@@ -15,7 +15,7 @@ jobs:
           name: テスト
           command: |
             pod install;
-            xcodebuild -project mySample.xcodeproj -scheme "mySampleTests" -destination 'platform=iOS Simulator,name=iPhone 8,OS=14.0' test;
+            xcodebuild -workspace mySample.xcworkspace -scheme "mySampleTests" -destination 'platform=iOS Simulator,name=iPhone 8,OS=14.0' test;
       - run:
           name: ダミー アーティファクトの作成
           command: |
