@@ -27,11 +27,13 @@ jobs:
     steps:
       - checkout
       - run:
-        name: 成果物作成
-        command: |
-          echo Hello!!;
+          name: 成果物ビルド
+          command: |
+            echo hello!!!
+
 
 workflows:
   version: 2.1
-  jobs:
-    - build
+  build:
+    jobs:
+      - build
