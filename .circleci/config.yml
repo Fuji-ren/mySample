@@ -20,3 +20,21 @@ jobs:
             echo "my artifact files in a dir" > uploadDir/sample.txt;
       - store_artifacts:
           path: uploadDir
+  aaa:
+    macos:
+      xcode: 12.0.0 # Specify the Xcode version to use
+
+    steps:
+      - checkout
+      - run:
+          name: 成果物ビルド
+          command: |
+            echo hello!!!
+
+
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - build
+      - aaa
