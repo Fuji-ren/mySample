@@ -19,7 +19,7 @@ jobs:
             mkdir uploadDir;
             echo "my artifact files in a dir" > uploadDir/sample.txt;
       - store_artifacts:
-          path: uploadDir
+          path: build
   aaa:
     macos:
       xcode: 12.0.0 # Specify the Xcode version to use
@@ -37,4 +37,3 @@ workflows:
   build:
     jobs:
       - build
-      - aaa
