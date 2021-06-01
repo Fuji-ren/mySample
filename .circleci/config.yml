@@ -36,5 +36,8 @@ workflows:
   version: 2.1
   build:
     jobs:
-      - build
-      - aaa
+      - aaa:
+            filters:
+              branches:
+                only:
+                  - master
