@@ -11,15 +11,18 @@ jobs:
 
     steps:
       - checkout
-      - run: xcodebuild -project mySample.xcodeproj -scheme "mySampleTests" -destination 'platform=iOS Simulator,name=iPhone 8,OS=14.0' test
-
+      - run:
+          name: テスト
+          command: |
+            pod install;
+            xcodebuild -workspace mySample.xcworkspace -scheme "mySampleTests" -destination 'platform=iOS Simulator,name=iPhone 8,OS=14.0' test;
       - run:
           name: ダミー アーティファクトの作成
           command: |
             mkdir uploadDir;
             echo "my artifact files in a dir" > uploadDir/sample.txt;
       - store_artifacts:
-          path: uploadDir
+          path: build
   aaa:
     macos:
       xcode: 12.0.0 # Specify the Xcode version to use
@@ -37,4 +40,3 @@ workflows:
   build:
     jobs:
       - build
-      - aaa

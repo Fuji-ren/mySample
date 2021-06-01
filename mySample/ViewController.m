@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import <ADFMovieReward/ADFMovieReward.h>
 
 @interface ViewController ()
 
