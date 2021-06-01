@@ -12,10 +12,6 @@
     return 1;
 }
 
-- (void)ccc {
-    1 + 1
-}
-
 - (void)ddd {
     
 }
